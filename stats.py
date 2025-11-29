@@ -1,20 +1,19 @@
-def get_book_text():
-    with open("books/frankenstein.txt") as f:
+def get_book_text(book_path):
+    with open(book_path) as f:
         file_contents = f.read()
         #print(file_contents)
         return file_contents
 
-def word_count():
-    text = get_book_text()
+def word_count(text):
     words = text.split()
     num_words = 0
     for w in words:
         num_words += 1
     print(f"Found {num_words} total words")
 
-def char_count():
+def char_count(text):
     char_list_dict = {}
-    text = get_book_text().lower()
+    text = text.lower()
     for c in text:
         if c.isalpha() == True:
             if c in char_list_dict:
