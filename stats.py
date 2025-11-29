@@ -16,9 +16,14 @@ def char_count():
     char_list_dict = {}
     text = get_book_text().lower()
     for c in text:
-        if c in char_list_dict:
-            char_list_dict[c] = char_list_dict[c] + 1
-        else:
-            char_list_dict[c] = 1
+        if c.isalpha() == True:
+            if c in char_list_dict:
+                char_list_dict[c] = char_list_dict[c] + 1
+            else:
+                char_list_dict[c] = 1
     return char_list_dict
     
+def sort_on(input_dict):
+    sorted_items = sorted(input_dict.items(), key=lambda item: item[1], reverse=True)
+    for key, value in sorted_items:
+        print(f"{key}: {value}")

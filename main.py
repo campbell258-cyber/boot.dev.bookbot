@@ -1,10 +1,10 @@
-def get_book_text():
-    with open("books/frankenstein.txt") as f:
-        file_contents = f.read()
-        #print(file_contents)
-        return file_contents
-    
-from stats import word_count, char_count
+print("============ BOOKBOT ============")
+print("Analyzing book found at books/frankenstein.txt...")
+print("----------- Word Count ----------")
+from stats import get_book_text,word_count, char_count, sort_on
+get_book_text()
+char_dict = char_count()
 word_count()
-print(char_count())
-
+print("--------- Character Count -------")
+sort_on(char_dict)
+print("============= END ===============")
