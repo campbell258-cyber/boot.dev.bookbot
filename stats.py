@@ -11,3 +11,14 @@ def word_count():
     for w in words:
         num_words += 1
     print(f"Found {num_words} total words")
+
+def char_count():
+    char_list_dict = {}
+    text = get_book_text().lower()
+    for c in text:
+        if c in char_list_dict:
+            char_list_dict[c] = char_list_dict[c] + 1
+        else:
+            char_list_dict[c] = 1
+    return char_list_dict
+    
